@@ -45,7 +45,7 @@ export default {
 		},
 		{
 			question: {
-				image: 'http://assets.myntassets.com/v1461838172/reactive/finder/4-27/fashion-capital-ques-1-opt-1.jpg',
+				image: 'http://www.freedigitalphotos.net/images/img/homepage/87357.jpg',
 				text: 'Question 2'
 			},
 			options: [
@@ -67,7 +67,7 @@ export default {
 		},
 		{
 			question: {
-				image: 'http://assets.myntassets.com/v1461838173/reactive/finder/4-27/fashion-capital-ques-2-opt-1.jpg',
+				image: 'http://www.newsread.in/wp-content/uploads/2016/06/Images-3.jpg',
 				text: 'Question 3'
 			},
 			options: [
@@ -90,7 +90,7 @@ export default {
 
 	],
 	results: {
-		link: 'http://www.myntra.com/true-blue-all',
+		link: 'http://www.myntra.com/shoes',
 		bgImage: 'http://www.amerikicksouthphilly.com/wp-content/uploads/2014/09/orange-paint-splash.png',
 		pointStyle: {
 			fontFamily: 'Bungee, cursive',

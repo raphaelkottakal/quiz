@@ -18,8 +18,13 @@ export default class Quiz extends React.Component {
 		super()
 		this.state = {
 			points: 0,
-			currentQuestion: 4,
+			currentQuestion: 1,
 		}
+	}
+
+	componentDidUpdate() {
+		// console.log(this.refs.container.scrollTop)
+		this.refs.container.scrollTop = 0
 	}
 
 	setNextQuestion() {
@@ -76,7 +81,8 @@ export default class Quiz extends React.Component {
 
 			const finalResult = _.find(data.results.types, (o)=>{ return o.minPoints <= this.state.points && o.maxPoints >= this.state.points})
 
-			console.log(finalResult);
+			Ga({action: 'points', label: '' + this.state.points})
+			// console.log(finalResult);
 
 			return (
 				<Result
@@ -98,7 +104,7 @@ export default class Quiz extends React.Component {
 
 		const css = {
 			quizView : {
-				backgroundColor: (data.basic.bgColor) ? data.basic.bgColor : '#fff',
+				// backgroundColor: data.basic.bgColor,
 				position: 'absolute',
 				width: '100%',
 				height: '100%',
@@ -108,7 +114,7 @@ export default class Quiz extends React.Component {
 		}
 
 		return(
-			<div style={css.quizView}>
+			<div ref="container" style={css.quizView}>
 				{this.renderView()}
 			</div>			
 		);

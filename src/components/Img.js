@@ -21,6 +21,24 @@ export default class Img extends React.Component {
 		}
 	}
 
+	componentWillReceiveProps(nextProps) {
+		this.setState({
+			loaded: false
+		});
+
+		const image = new Image()
+
+		image.src = nextProps.src
+
+		image.onload = () => {
+			this.setState({
+				loaded: true
+			});
+		}
+
+	}
+
+
 	render() {
 
 		const css = {
@@ -28,6 +46,7 @@ export default class Img extends React.Component {
 				width: '100%',
 				height: this.props.initHeight,
 				backgroundColor: 'lightgray',
+				color: 'whitesmoke',
 				textAlign: 'center',
 			},
 			table: {

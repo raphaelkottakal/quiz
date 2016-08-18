@@ -4,7 +4,19 @@ import { assignIn } from 'lodash';
 
 import Img from './Img';
 
+import Ga from '../functions/Ga';
+
 export default class Result extends React.Component {
+
+	handelShopLink(e) {
+		Ga({action: 'shop', label: e.target.href})
+
+	}
+
+	handelPlayAgain() {
+		Ga({action: 'replay', label: '' + this.props.points})
+		this.props.restartQuiz()
+	}
 
 	render() {
 
@@ -83,9 +95,9 @@ export default class Result extends React.Component {
 					<div style={css.content}>{this.props.result.content}</div>
 				</div>
 				<div style={css.shopWrapper}>
-					<a style={css.shop} href={this.props.shop} target="_blank">Shop Collection</a>
+					<a onClick={this.handelShopLink} style={css.shop} href={this.props.shop} target="_blank">Shop Collection</a>
 				</div>
-				<div onClick={this.props.restartQuiz} style={css.playAgain}>Play again</div>
+				<div onClick={this.handelPlayAgain.bind(this)} style={css.playAgain}>Play again</div>
 			</div>
 		);
 
