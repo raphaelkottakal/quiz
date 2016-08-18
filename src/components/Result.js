@@ -74,7 +74,7 @@ export default class Result extends React.Component {
 					<Img src={this.props.bgImage} alt="result background" />
 					<div style={css.points}>
 						<div style={css.table}>
-							<div style={css.tableCell}>{this.props.points} / {this.props.total}</div>
+							<div style={css.tableCell}>{this.props.points}<span style={{fontFamily: 'Roboto'}}>/</span>{this.props.total}</div>
 						</div>
 					</div>
 				</div>
