@@ -5,18 +5,20 @@ import '../css/main.css';
 
 import Ga from '../functions/Ga';
 
+import _ from 'lodash';
+
 import data from '../data';
 
 import SplashScreen from './Splash';
 import Question from './Question';
+import Result from './Result';
 
 export default class Quiz extends React.Component {
 	constructor() {
 		super()
 		this.state = {
-			imagesLoaded: false,
 			points: 0,
-			currentQuestion: 0,
+			currentQuestion: 4,
 		}
 	}
 
@@ -40,6 +42,13 @@ export default class Quiz extends React.Component {
 		});
 	}
 
+	restartQuiz() {
+		this.setState({
+			currentQuestion: 1,
+			points: 0,
+		});
+	}
+
 	renderView() {
 		// console.log(data.qNa.length)
 		if (this.state.currentQuestion === 0) {
@@ -47,9 +56,9 @@ export default class Quiz extends React.Component {
 				<SplashScreen
 					image={data.splash.image}
 					text={data.splash.text}
+					textStyle={data.splash.textStyle}
 					startText={data.splash.startText}
-					startColor={data.splash.startColor}
-					startTextColor={data.splash.startTextColor}
+					startStyle={data.splash.startStyle}
 					nextQuestion={this.setNextQuestion.bind(this)}
 				/>)
 		} else if (this.state.currentQuestion <= data.qNa.length) {
@@ -58,12 +67,29 @@ export default class Quiz extends React.Component {
 			return (
 					<Question
 						data={data.qNa[this.state.currentQuestion - 1]}
+						questionStyle={data.basic.questionStyle}
 						addPoints={this.addPoints.bind(this)}
 						noPoints={this.noPoints.bind(this)}
 					/>
 				)
-			return 'Question ' + this.state.currentQuestion
 		} else {
+
+			const finalResult = _.find(data.results.types, (o)=>{ return o.minPoints <= this.state.points && o.maxPoints >= this.state.points})
+
+			console.log(finalResult);
+
+			return (
+				<Result
+					titleStyle={data.results.titleStyle}
+					points={this.state.points}
+					total={data.qNa.length}
+					result={finalResult}
+					bgImage={data.results.bgImage}
+					pointStyle={data.results.pointStyle}
+					shop={data.results.link}
+					restartQuiz={this.restartQuiz.bind(this)}
+				/>
+			)
 			return 'Your score - ' + this.state.points
 		}
 	}

@@ -1,15 +1,22 @@
 export default {
 	basic: {
-
-		bgColor: 'white',
+		questionStyle: {
+			fontFamily: 'Bungee, cursive',
+		},
+		bgColor: '#fffad2',
 	},
 
 	splash: {
 		image: 'http://mofidili.com/wp-content/uploads/2013/12/QUIZ-OF-THE-WEEK.png',
-		text: 'This is a simple quiz',
-		startText: 'Batter up!',
-		startColor: 'slateblue',
-		startTextColor: 'white',
+		text: 'Simple quiz title',
+		textStyle: {
+			fontFamily: 'Bungee, cursive',
+		},
+		startText: 'Find out',
+		startStyle: {
+			color: 'white',
+			backgroundColor: 'slateblue'
+		}
 	},
 
 	qNa: [
@@ -82,5 +89,37 @@ export default {
 		},
 
 	],
+	results: {
+		link: 'http://www.myntra.com/true-blue-all',
+		bgImage: 'http://www.amerikicksouthphilly.com/wp-content/uploads/2014/09/orange-paint-splash.png',
+		pointStyle: {
+			fontFamily: 'Bungee, cursive',
+			fontSize: 64,
+			color: 'white'
+		},
+		titleStyle: {
+			fontFamily: 'Bungee, cursive',
+		},
+		types:[
+			{
+				minPoints: 0,
+				maxPoints: 1,
+				title: 'Never lose hope',
+				content: "Cras gravida neque ut odio egestas ullamcorper. Pellentesque ut iaculis massa. Sed vulputate placerat dui consequat auctor. Proin lacinia tortor efficitur dolor dignissim dignissim. Vivamus orci elit, euismod et pharetra quis, ultricies et dui. Vivamus finibus justo vitae efficitur hendrerit."
+			},
+			{
+				minPoints: 2,
+				maxPoints: 2,
+				title: 'Keep it up',
+				content: "Cras gravida neque ut odio egestas ullamcorper. Pellentesque ut iaculis massa. Sed vulputate placerat dui consequat auctor. Proin lacinia tortor efficitur dolor dignissim dignissim. Vivamus orci elit, euismod et pharetra quis, ultricies et dui. Vivamus finibus justo vitae efficitur hendrerit."
+			},
+			{
+				minPoints: 3,
+				maxPoints: 5,
+				title: 'Mr. Know it all',
+				content: "Cras gravida neque ut odio egestas ullamcorper. Pellentesque ut iaculis massa. Sed vulputate placerat dui consequat auctor. Proin lacinia tortor efficitur dolor dignissim dignissim. Vivamus orci elit, euismod et pharetra quis, ultricies et dui. Vivamus finibus justo vitae efficitur hendrerit."
+			},
+		]
+	}
 
 }

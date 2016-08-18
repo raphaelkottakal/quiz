@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { assignIn } from 'lodash';
+
 import Img from './Img';
 
 export default class Question extends React.Component {
@@ -8,7 +10,13 @@ export default class Question extends React.Component {
 		const css = {
 			text: {
 				textAlign: 'center',
-				padding: 16
+				padding: 8,
+				margin: 16,
+				border: '1px solid #000'
+			},
+			span: {
+				// padding: 8,
+				// border: '1px solid #000'
 			}
 		}
 		const options = this.props.data.options.map((val,key) => {
@@ -17,11 +25,11 @@ export default class Question extends React.Component {
 
 			if (val.answer) {
 				option = <div key={key} onClick={this.props.addPoints} style={css.text}>
-					{val.text}
+					<span style={css.span}>{val.text}</span>
 				</div>
 			} else {
 				option = <div key={key} onClick={this.props.noPoints} style={css.text}>
-					{val.text}
+					<span style={css.span}>{val.text}</span>
 				</div>
 			}
 
@@ -35,16 +43,19 @@ export default class Question extends React.Component {
 
 		const css = {
 			questionText: {
-				textAlign: 'center'
+				textAlign: 'center',
+				margin: 16
 			}
 		}
+
+		assignIn(css.questionText, this.props.questionStyle)
+
 
 		return(
 			<div>
 				<Img src={this.props.data.question.image} alt={this.props.data.question.text} />
 				{/*<img src={this.props.data.question.image} alt={this.props.data.question.text} />*/}
 				<div style={css.questionText}>{this.props.data.question.text}</div>
-				<hr/>
 				<div>
 					{this.renderOption()}
 				</div>
@@ -56,6 +67,7 @@ export default class Question extends React.Component {
 }
 
 Question.propTypes = {
+	questionStyle: React.PropTypes.object.isRequired,
 	data: React.PropTypes.object.isRequired,
 	addPoints: React.PropTypes.func.isRequired,
 }

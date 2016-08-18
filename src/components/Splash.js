@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { assignIn } from 'lodash';
+
 import Img from './Img';
 
 export default class Splash extends React.Component {
@@ -17,6 +19,9 @@ export default class Splash extends React.Component {
 				verticalAlign: 'middle',
 				textAlign: 'center',	
 			},
+			text:{
+				margin: 16,
+			},
 			splashImage : {
 				display: 'block',
 				width: '50%',
@@ -24,12 +29,13 @@ export default class Splash extends React.Component {
 			},
 			start: {
 				display: 'inline-block',
-				backgroundColor: this.props.startColor,
-				color: this.props.startTextColor,
 				marginTop: 32,
 				padding: '4px 8px',
 			}
 		}
+
+		assignIn(css.start, this.props.startStyle)
+		assignIn(css.text, this.props.textStyle)
 
 
 
@@ -37,7 +43,7 @@ export default class Splash extends React.Component {
 			<div style={css.table}>
 				<div style={css.splashImageWrapper}>
 					<Img initHeight={70} style={css.splashImage} src="http://mofidili.com/wp-content/uploads/2013/12/QUIZ-OF-THE-WEEK.png" alt="Quiz" />
-					<div>This is a simple quiz</div>
+					<div style={css.text}>{this.props.text}</div>
 					<div onClick={this.props.nextQuestion} style={css.start}>{this.props.startText}</div>
 				</div>
 			</div>		
@@ -50,9 +56,9 @@ export default class Splash extends React.Component {
 Splash.propTypes = {
 	image: React.PropTypes.string.isRequired,
 	text: React.PropTypes.string.isRequired,
+	textStyle: React.PropTypes.object.isRequired,
 	startText: React.PropTypes.string,
-	startColor: React.PropTypes.string.isRequired,
-	startTextColor: React.PropTypes.string.isRequired,
+	startStyle: React.PropTypes.object.isRequired,
 	nextQuestion: React.PropTypes.func.isRequired,
 }
 
