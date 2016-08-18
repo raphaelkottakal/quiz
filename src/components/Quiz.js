@@ -22,6 +22,10 @@ export default class Quiz extends React.Component {
 		}
 	}
 
+	componentDidMount() {
+		document.title = data.basic.title
+	}
+
 	componentDidUpdate() {
 		// console.log(this.refs.container.scrollTop)
 		this.refs.container.scrollTop = 0

@@ -48,6 +48,7 @@ export default class Img extends React.Component {
 				backgroundColor: 'lightgray',
 				color: 'whitesmoke',
 				textAlign: 'center',
+				marginBottom: 8,
 			},
 			table: {
 				display: 'table',

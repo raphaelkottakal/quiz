@@ -44,7 +44,8 @@ export default class Question extends React.Component {
 		const css = {
 			questionText: {
 				textAlign: 'center',
-				margin: 16
+				margin: 16,
+				marginTop: 0,
 			}
 		}
 
