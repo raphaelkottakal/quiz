@@ -8,7 +8,7 @@ export default {
 	},
 
 	splash: {
-		image: 'http://assets.myntassets.com/v1471521147/radium/quiz/image1.png',
+		image: 'http://assets.myntassets.com/v1471521147/radium/quiz/image2.png',
 		text: 'How well do you know Sachin Tendulkar?',
 		textStyle: {
 			fontFamily: 'Bungee, cursive',
@@ -24,7 +24,7 @@ export default {
 
 		{
 			question: {
-				image: 'http://assets.myntassets.com/v1471521147/radium/quiz/image1.png',
+				image: 'http://assets.myntassets.com/assets/images/lookbook/true-blue-quiz/2016/8/19/11471605726368-1.png',
 				text: 'What is the total number of centuries Sachin scored in ODI and tests?'
 			},
 			options: [
@@ -46,7 +46,7 @@ export default {
 		},
 		{
 			question: {
-				image: 'http://assets.myntassets.com/v1471521147/radium/quiz/image2.png',
+				image: 'http://assets.myntassets.com/assets/images/lookbook/true-blue-quiz/2016/8/19/11471605726353-2.png',
 				text: 'Pick Sachin\'s favourite colour from below'
 			},
 			options: [
@@ -68,7 +68,7 @@ export default {
 		},
 		{
 			question: {
-				image: 'http://assets.myntassets.com/v1471521147/radium/quiz/image3.png',
+				image: 'http://assets.myntassets.com/assets/images/lookbook/true-blue-quiz/2016/8/19/11471605726333-3.png',
 				text: 'Pick the right name of Sachin\'s autobiography'
 			},
 			options: [
@@ -90,7 +90,7 @@ export default {
 		},
 		{
 			question: {
-				image: 'http://assets.myntassets.com/v1471521149/radium/quiz/image_4.png',
+				image: 'http://assets.myntassets.com/assets/images/lookbook/true-blue-quiz/2016/8/19/11471605726296-4.png',
 				text: 'Sachin always wears his-'
 			},
 			options: [
@@ -112,7 +112,7 @@ export default {
 		},
 		{
 			question: {
-				image: 'http://assets.myntassets.com/v1471521147/radium/quiz/image_5.png',
+				image: 'http://assets.myntassets.com/assets/images/lookbook/true-blue-quiz/2016/8/19/11471605726266-5.png',
 				text: 'Sachin holds the world record for the highest partnership in ODI matches with-'
 			},
 			options: [
@@ -136,7 +136,7 @@ export default {
 	],
 	results: {
 		link: 'http://www.myntra.com/true-blue',
-		bgImage: 'http://assets.myntassets.com//v1471521147/radium/quiz/image_7.png',
+		bgImage: 'http://assets.myntassets.com/assets/images/lookbook/true-blue-quiz/2016/8/19/11471605726245-6.png',
 		pointStyle: {
 			fontFamily: 'Bungee, cursive',
 			fontSize: 64,
